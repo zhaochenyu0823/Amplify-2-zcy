@@ -10,6 +10,23 @@
       "StackName": "amplify-amplify2zcy-devzcy-815dd",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:104501356618:stack/amplify-amplify2zcy-devzcy-815dd/f559c2d0-17d8-11ef-9338-0e51f675de57",
       "AmplifyAppId": "d36lshifsdc8gc"
+    },
+    "categories": {
+      "auth": {
+        "amplify2zcy": {
+          "userPoolId": "ap-northeast-1_uh8qmsYyo",
+          "userPoolName": "amplifyAuthUserPool4BA7F805-iaHlAmgLvZVS",
+          "webClientId": "3qf93dnsi0dap0oaari01qrtpi",
+          "nativeClientId": "3qf93dnsi0dap0oaari01qrtpi",
+          "identityPoolId": "ap-northeast-1:83e50f33-7d81-418f-a63e-b14cb24effa0",
+          "identityPoolName": "amplifyAuthIdentityPool3FDE84CC_Xb9kdXNtIJNs",
+          "allowUnauthenticatedIdentities": true,
+          "authRoleArn": "arn:aws:iam::104501356618:role/amplify-d36lshifsdc8gc-ma-amplifyAuthauthenticatedU-Z2nguvYNGKoV",
+          "authRoleName": "amplify-d36lshifsdc8gc-ma-amplifyAuthauthenticatedU-Z2nguvYNGKoV",
+          "unauthRoleArn": "arn:aws:iam::104501356618:role/amplify-d36lshifsdc8gc-ma-amplifyAuthunauthenticate-ppDDOcVZrOeG",
+          "unauthRoleName": "amplify-d36lshifsdc8gc-ma-amplifyAuthunauthenticate-ppDDOcVZrOeG"
+        }
+      }
     }
   }
 }

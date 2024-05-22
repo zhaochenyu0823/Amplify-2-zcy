@@ -7,5 +7,95 @@
       "service": "Cognito",
       "serviceType": "imported"
     }
+  },
+  "parameters": {
+    "AMPLIFY_auth_amplify2zcy_allowUnauthenticatedIdentities": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify2zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify2zcy_authRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify2zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify2zcy_authRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify2zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify2zcy_identityPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify2zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify2zcy_identityPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify2zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify2zcy_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify2zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify2zcy_unauthRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify2zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify2zcy_unauthRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify2zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify2zcy_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify2zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify2zcy_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify2zcy"
+        }
+      ]
+    },
+    "AMPLIFY_auth_amplify2zcy_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "amplify2zcy"
+        }
+      ]
+    }
   }
 }
