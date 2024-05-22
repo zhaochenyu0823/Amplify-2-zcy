@@ -20,7 +20,7 @@ export default function AddUserAddress() {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault(); // 防止表单自动提交
     try {
-      await client.models.UserAddress.create(formData);
+       client.models.UserAddress.create({ userId: formData.userId,name:formData.name,phone:formData.phone,address:formData.address });
       alert('Address saved successfully!');
       setFormData({
         userId: '', 
