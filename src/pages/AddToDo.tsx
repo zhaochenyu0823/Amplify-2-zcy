@@ -9,7 +9,6 @@ export default function AddToDo() {
   const [formData, setFormData] = useState<Schema["Todo"]["type"]>({
     id: '',
     content: '',
-    name: '',
     createdAt: '', 
     updatedAt: ''  
   });
@@ -23,7 +22,6 @@ export default function AddToDo() {
       setFormData({
         id: '',
         content: '',
-        name: '', 
         createdAt: '', 
         updatedAt: ''
       });
@@ -56,13 +54,6 @@ export default function AddToDo() {
           value={formData.content|| ""}
           onChange={handleChange}
           placeholder="Content"
-        />
-        <input
-          type="text"
-          name="name"
-          value={formData.name || ""} 
-          onChange={handleChange}
-          placeholder="Name"
         />
         <button type="submit">Submit</button>
       </form>
