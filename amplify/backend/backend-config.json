@@ -1,1 +1,11 @@
-{}
+{
+  "auth": {
+    "amplify2zcy": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "imported"
+    }
+  }
+}

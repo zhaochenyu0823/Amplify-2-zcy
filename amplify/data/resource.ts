@@ -12,6 +12,7 @@ const schema = a.schema({
       content: a.string(),
     })
     ,
+    
     UserAddress: a
     .model({
       userId: a.id().required(),
