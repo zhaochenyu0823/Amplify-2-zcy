@@ -7,6 +7,13 @@ import NavBar from "./pages/NavBar.tsx";
 import { Authenticator } from "@aws-amplify/ui-react";
 
 Amplify.configure(outputs);
+const existingConfig = Amplify.getConfig();
+Amplify.configure({
+  ...existingConfig,
+  API: {
+    REST: outputs.custom.API,
+  },
+});
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Authenticator>
