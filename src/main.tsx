@@ -1,19 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./styles/index.css";
 import { Amplify } from "aws-amplify";
-import outputs from "../amplify_outputs.json";
-import NavBar from "./pages/NavBar.tsx";
 import { Authenticator } from "@aws-amplify/ui-react";
+import outputs from "../amplify_outputs.json";
+
+import "./styles/index.css";
+
+import NavBar from "./pages/NavBar.tsx";
+
 
 Amplify.configure(outputs);
-const existingConfig = Amplify.getConfig();
-Amplify.configure({
-  ...existingConfig,
-  API: {
-    REST: outputs.custom.API,
-  },
-});
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Authenticator>
