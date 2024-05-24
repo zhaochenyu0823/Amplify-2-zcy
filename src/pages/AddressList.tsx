@@ -7,7 +7,6 @@ const client = generateClient<Schema>(); //这个客户端用于执行对数据�
 export default function AddressList() {
   const [addresses, setAddressList] = useState<Schema["UserAddress"]["type"][]>([]); // 更改变量名避免混淆
   const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
 
 
   const fetchAddress = async () => {
@@ -35,11 +34,6 @@ export default function AddressList() {
   useEffect(() => { //useEffect 钩子在组件首次渲染时调用 
     fetchAddress();
     fetchData();
-
-
-    setIsLoading(true);
-
-
   }, []);
 
 
