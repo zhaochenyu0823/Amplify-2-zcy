@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"; //useState 用于在组件中管理状态，useEffect 用于处理副作用（例如数据获取）。
 import type { Schema } from "../../amplify/data/resource"; //Schema 是用于定义数据库模型的结构。
 import { generateClient } from "aws-amplify/data"; //generateClient 可以用来与后端服务交互。
+import axios from 'axios';
+import { fetchAuthSession } from 'aws-amplify/auth'
 
 const client = generateClient<Schema>(); //这个客户端用于执行对数据库的操作，如读取和写入数据。
 
@@ -15,17 +17,25 @@ export default function AddressList() {
     client.models.UserAddress.observeQuery().subscribe({
       next: (data) => setAddressList([...data.items]),
     });
+
+
   };
   const fetchData = async () => {
     try {
-      const response = await fetch('https://fy49s270l9.execute-api.ap-northeast-1.amazonaws.com/prod/items');
-      if (!response.ok) {
-        throw new Error('Network response was not ok: ' + response.status);
-      }
-      const jsonData = await response.json();
-      setData(jsonData);
+
+      const session = await fetchAuthSession();
+      const token = session.tokens?.idToken;
+      console.log(token);  
+
+      const response = await axios.get('https://qj930d5n79.execute-api.ap-northeast-1.amazonaws.com/prod/items', {
+        headers: {
+          Authorization: `Bearer ${token }`
+        }
+      });
+      setData(response.data);
+      console.log(response.data);  // 处理你的数据
     } catch (error) {
-      console.error('Failed to fetch data:', error);
+      console.error('Failed to fetch:', error);
     }
   };
 

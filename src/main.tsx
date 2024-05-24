@@ -12,6 +12,7 @@ import NavBar from "./pages/NavBar.tsx";
 
 
 Amplify.configure(outputs);
+
 const existingConfig = Amplify.getConfig();
 Amplify.configure({
   ...existingConfig,
@@ -19,6 +20,7 @@ Amplify.configure({
     REST: outputs.custom.API,
   },
 });
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Authenticator>
