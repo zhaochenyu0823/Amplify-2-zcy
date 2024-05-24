@@ -6,18 +6,42 @@ const client = generateClient<Schema>(); //这个客户端用于执行对数据�
 
 export default function AddressList () {
     const [addresses, setAddressList] = useState<Schema["UserAddress"]["type"][]>([]); // 更改变量名避免混淆
+    const [data, setData] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
+    
     const fetchAddress = async () => {
         const { data: items } = await client.models.UserAddress.list();
         setAddressList(items);
-
-
         client.models.UserAddress.observeQuery().subscribe({
             next: (data) => setAddressList([...data.items]),
           });
     };
 
+    
+
     useEffect(() => { //useEffect 钩子在组件首次渲染时调用 
         fetchAddress();
+
+
+
+        setIsLoading(true);
+        fetch('https://0m3m3y27e6.execute-api.ap-northeast-1.amazonaws.com/cognito-auth-path')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();  // Assuming the API returns plain text
+            })
+            .then(data => {
+                setData(data);
+                setIsLoading(false);
+            })
+            .catch(error => {
+                setError(error.message);
+                setIsLoading(false);
+            });
+
     }, []);
 
     
@@ -28,7 +52,19 @@ export default function AddressList () {
         {addresses.map((ad) => (
           <li key={ad.userId}>名前: {ad.name}, 電話番号: {ad.phone}, 住所: {ad.address}</li>
         ))}
-        </ul>    
+        </ul>   
+
+
+                <div>
+            <h1>API Response</h1>
+            {isLoading ? (
+                <p>Loading...</p>
+            ) : error ? (
+                <p>Error: {error}</p>
+            ) : (
+                <p>{data}</p>
+            )}
+        </div> 
     </div>
       
     );
