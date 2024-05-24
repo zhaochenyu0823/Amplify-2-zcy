@@ -26,7 +26,7 @@ export default function AddressList () {
 
 
         setIsLoading(true);
-        fetch('https://0m3m3y27e6.execute-api.ap-northeast-1.amazonaws.com/cognito-auth-path')
+        fetch('https://qj930d5n79.execute-api.ap-northeast-1.amazonaws.com/prod/items')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
